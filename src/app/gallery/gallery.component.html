@@ -1,0 +1,18 @@
+<div><h1>{{ Title }}</h1>
+<h2 class="subtitle">Pre-Fabricated, Ready to Install</h2></div>
+<div class="content">
+  <div class="left-side">
+    <h3>Filters</h3>
+    <label for="Category">Category: </label>
+    <input aria-label="Category" type="text" class="stylish-input">
+  </div>
+  <div class="divider" role="separator" aria-label="Divider"></div>
+  <div class="right-side">
+      @for (item of GalleryImages; track trackByItemTitle) {
+        <div class="image-container">
+          <img [src]="item.imgSrc" [alt]="item.title" class="image-item">
+        </div>
+      }
+  </div>
+  <div class="horizontal-divider" role="separator" aria-label="Divider"></div>
+</div>

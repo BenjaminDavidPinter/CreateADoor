@@ -1,8 +1,48 @@
-  .subtitle {
-    font-size: 1.25rem; /* Adjust size as needed */
-    color: #666; /* Adjust color as needed */
-    margin-top: 0.2em; /* Optional: tweak spacing */
-  }
+.subtitle {
+  font-size: 1rem; /* Adjust size as needed */
+  color: #666; /* Adjust color as needed */
+  margin-top: 0.01em; /* Optional: tweak spacing */
+}
+.main-title {
+  font-size: 1.50rem; /* Adjust size as needed */
+  color: #666; /* Adjust color as needed */
+  margin-top: 0.01em; /* Optional: tweak spacing */
+  margin-bottom: 0.01em;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid;
+  margin-bottom: 1rem;
+}
+
+.header-text-container {
+  padding-right: 2em;
+}
+
+.header-container h1 {
+  margin-right: 20px;
+}
+
+.header-container .subtitle {
+  margin-right: 20px;
+  /* Adjust the margin as necessary to balance spacing */
+}
+
+.header-container .pill-group {
+  display: flex;
+  flex-direction: row;
+  gap: 10px; /* space between pills */
+}
+
+.header-container .pill-group a.pill {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
 
 :host {
   --bright-blue: oklch(51.01% 0.274 263.83);
@@ -96,7 +136,7 @@ main {
 
 .pill-group {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: start;
   flex-wrap: wrap;
   gap: .2rem;

@@ -1,0 +1,36 @@
+<div class="header-container">
+<div class="header-text-container">
+  <h2 class="main-title">
+    {{ title }}
+  </h2>
+  <h4 class="subtitle">{{ subtitle }}</h4>
+</div>
+<div class="pill-group">
+  @for (item of [
+    { title: 'Design Your Door', link: 'https://angular.dev', route: '/door-designer' },
+    { title: 'Gallery', link: '', route: '/gallery'},
+    { title: 'Contact Us Directly', link: 'https://angular.dev/tools/cli', route: '/contact-us' },
+  ]; track item.title) {
+    <a
+      class="pill"
+      routerLink="{{item.route}}"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      rel="noopener"
+    >
+      <svg
+        width="30"
+        height="24"
+        xmlns="http://www.w3.org/2000/svg"
+        fill-rule="evenodd"
+        clip-rule="evenodd">
+        <path d="M20 23h2v1h-20v-1h2v-23h16v23zm-1-22h-14v22h14v-22zm-10 11v1h-3v-1h3z"/>
+      </svg>
+      <span>{{ item.title }}</span>
+    </a>
+  }
+</div>
+</div>
+<div class="horizontal-divider" role="separator" aria-label="Divider"></div>
+<router-outlet />
+
