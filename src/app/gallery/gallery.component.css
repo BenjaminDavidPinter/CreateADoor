@@ -14,11 +14,13 @@
   display: flex;
   flex-wrap: wrap; /* Allows the items to wrap to the next line when out of space */
   gap: .2em; /* Adds space between the images */
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .image-container {
-  width: 12em;   /* Width of each image tile */
-  height: 15em;  /* Height of each image tile */
+  width: 19em;   /* Width of each image tile */
+  height: 22em;  /* Height of each image tile */
   overflow: hidden;
 }
 
@@ -41,6 +43,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover; /* Ensures the image covers the area without distortion */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 :host {
@@ -111,12 +114,22 @@ main {
   max-width: 9.2rem;
 }
 
+.pad-zero{
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 .content {
   display: flex;
   justify-content: left;
   width: 100%;
   margin-bottom: 3rem;
   margin-top: 3rem;
+}
+
+.image-item:hover {
+  transform: scale(1.25);
+  box-shadow: 5px 5px 15px rgba(255, 105, 180, 0.8);
 }
 
 .sub-page-header {
