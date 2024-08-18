@@ -10,7 +10,6 @@
   width: 10em;
 }
 
-
 .right-side {
   display: flex;
   flex-wrap: wrap; /* Allows the items to wrap to the next line when out of space */
@@ -117,6 +116,16 @@ main {
   justify-content: left;
   width: 100%;
   margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+
+.sub-page-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3em;
 }
 
 .content h1 {
