@@ -25,10 +25,10 @@ export class GalleryComponent {
     {imgSrc: 'assets/gallery/sample5.jpg', title: "Image5", tags: "blue, games"},
     {imgSrc: 'assets/gallery/sample6.jpg', title: "Image6", tags: "blue, games"},
     {imgSrc: 'assets/gallery/sample7.jpg', title: "Image7", tags: "blue, sports"},
+    {imgSrc: 'assets/gallery/sample8.jpg', title: "Image8", tags: "white, sports"},
     {imgSrc: 'assets/gallery/sample9.jpg', title: "Image9", tags: "blue, sports"},
     {imgSrc: 'assets/gallery/sample10.jpg', title: "Image10", tags: "blue, sports"},
     {imgSrc: 'assets/gallery/sample11.jpg', title: "Image11", tags: "white, sports"},
-    {imgSrc: 'assets/gallery/sample8.jpg', title: "Image8", tags: "white, sports"},
     {imgSrc: 'assets/gallery/sample12.png', title: "Image12", tags: "white, sports"},
   ];
 

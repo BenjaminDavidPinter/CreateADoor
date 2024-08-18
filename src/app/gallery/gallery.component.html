@@ -12,7 +12,9 @@
   <div class="right-side">
       @for (item of filteredSelection(); track trackByItemTitle) {
         <div class="image-container">
-          <img [src]="item.imgSrc" [alt]="item.title" class="image-item">
+          <a [routerLink]="['/gallery-door-detail', item.imgSrc]">
+            <img [src]="item.imgSrc" [alt]="item.title" class="image-item">
+          </a>
         </div>
       }
   </div>
