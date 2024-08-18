@@ -188,7 +188,7 @@ main {
 
 .divider {
   width: 1px;
-  background: var(--red-to-pink-to-purple-vertical-gradient);
+  background: black;
   margin-inline: 0.5rem;
 }
 
