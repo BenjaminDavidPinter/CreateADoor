@@ -11,9 +11,17 @@
   <div class="content">
         @for (item of filteredSelection(); track trackByItemTitle) {
           <div class="image-container">
-            <a [routerLink]="['/gallery-door-detail', item.imgSrc]">
-              <img [src]="item.imgSrc" [alt]="item.title" class="image-item">
+            <a [routerLink]="['/gallery-door-detail', item.id]">
+              <img [src]="item.imgSrc" [alt]="item.style" class="image-item">
             </a>
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">{{ item.name }}</h5>
+                <p class="card-text">Style: {{ item.style }}</p>
+                <p class="card-text">Material: {{ item.material }}</p>
+                <p class="card-price">{{ item.cost | currency }}</p>
+              </div>
+            </div>
           </div>
         }
     <div class="horizontal-divider" role="separator" aria-label="Divider"></div>

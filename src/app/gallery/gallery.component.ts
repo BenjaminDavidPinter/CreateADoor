@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
-import {RouterLink, RouterLinkActive} from "@angular/router";
-import {FormsModule} from "@angular/forms";
+import { RouterLink, RouterLinkActive } from "@angular/router";
+import { FormsModule } from "@angular/forms";
+import {CommonModule} from "@angular/common";
+import {Door} from "../models/Door"
+import {DoorServiceService} from "../services/door-service.service";
 
 @Component({
   selector: 'app-gallery',
@@ -8,35 +11,38 @@ import {FormsModule} from "@angular/forms";
   imports: [
     RouterLink,
     RouterLinkActive,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   templateUrl: './gallery.component.html',
-  styleUrl: './gallery.component.css'
+  styleUrls: ['./gallery.component.css']
 })
 export class GalleryComponent {
   Title = "Prefab Gallery";
   Search = "";
+  GalleryImages: Door[] = [];
 
-  GalleryImages = [
-    {imgSrc: 'assets/gallery/sample1.jpg', title: "Image1", tags: "white, games"},
-    {imgSrc: 'assets/gallery/sample2.jpg', title: "Image2", tags: "white, games"},
-    {imgSrc: 'assets/gallery/sample3.jpg', title: "Image3", tags: "white, games"},
-    {imgSrc: 'assets/gallery/sample4.jpg', title: "Image4", tags: "white, games"},
-    {imgSrc: 'assets/gallery/sample5.jpg', title: "Image5", tags: "blue, games"},
-    {imgSrc: 'assets/gallery/sample6.jpg', title: "Image6", tags: "blue, games"},
-    {imgSrc: 'assets/gallery/sample7.jpg', title: "Image7", tags: "blue, sports"},
-    {imgSrc: 'assets/gallery/sample8.jpg', title: "Image8", tags: "white, sports"},
-    {imgSrc: 'assets/gallery/sample9.jpg', title: "Image9", tags: "blue, sports"},
-    {imgSrc: 'assets/gallery/sample10.jpg', title: "Image10", tags: "blue, sports"},
-    {imgSrc: 'assets/gallery/sample11.jpg', title: "Image11", tags: "white, sports"},
-    {imgSrc: 'assets/gallery/sample12.png', title: "Image12", tags: "white, sports"},
-  ];
+  constructor(private doorService: DoorServiceService) { }
 
-  trackByItemTitle(index: number, item: { title: string }): string {
-    return item.title;
+  ngOnInit():void {
+    this.GalleryImages = this.doorService.GetDoors();
   }
 
-  filteredSelection() {
-    return this.GalleryImages.filter((image) => image.tags.includes(this.Search))
+  trackByItemTitle(index: number, item: Door): string {
+    return item.style;
+  }
+
+  filteredSelection(): Door[] {
+    const searchTags = this.Search.split(',')
+      .map(tag => tag.trim().toLowerCase())
+      .filter(tag => tag.length > 0);
+
+    if (this.Search === "") {
+      return this.GalleryImages;
+    } else {
+      return this.GalleryImages.filter(image =>
+        searchTags.every(tag => image.tags.map(t => t.toLowerCase()).includes(tag))
+      );
+    }
   }
 }

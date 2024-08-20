@@ -4,34 +4,34 @@
 </div>
 <div class="content">
   <div class="left-side image-container">
-    <img [src]="targetDoorImage" class="image-item">
+    <img [src]="thisDoor.imgSrc" class="image-item">
   </div>
   <div class="divider" role="separator" aria-label="Divider"></div>
   <div class="right-side">
     <table>
       <tr>
-        <th class="detail-label">Style</th>
-        <td class="detail-value"><i>Shaker</i></td>
+        <th class="detail-label">Name</th>
+        <td class="detail-value"><i>{{ thisDoor.name }}</i></td>
       </tr>
       <tr>
-        <th class="detail-label">Dimensions</th>
-        <td class="detail-value"><i>30x80</i></td>
+        <th class="detail-label">Style</th>
+        <td class="detail-value"><i>{{ thisDoor.style }}</i></td>
       </tr>
       <tr>
         <th class="detail-label">Color</th>
-        <td class="detail-value"><i>Eggshell White</i></td>
+        <td class="detail-value"><i>{{ thisDoor.color }}</i></td>
       </tr>
       <tr>
         <th class="detail-label">Material</th>
-        <td class="detail-value"><i>Recycled Wood</i></td>
+        <td class="detail-value"><i>{{ thisDoor.material }}</i></td>
       </tr>
       <tr>
-        <th class="detail-label">Design</th>
-        <td class="detail-value"><i>Inlaid Phillies Logo & Baseballs</i></td>
+        <th class="detail-label">Tags</th>
+        <td class="detail-value"><i>{{ thisDoor.tags }}</i></td>
       </tr>
       <tr>
         <th class="detail-label">Price</th>
-        <td class="detail-value"><i>$9,000,000.00</i></td>
+        <td class="detail-value"><i>{{ thisDoor.cost | currency }}</i></td>
       </tr>
     </table>
   </div>
