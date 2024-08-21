@@ -18,7 +18,7 @@ import {DoorServiceService} from "../services/door-service.service";
   styleUrls: ['./gallery.component.css']
 })
 export class GalleryComponent {
-  Title = "Prefab Gallery";
+  Title = "Panel Gallery";
   Search = "";
   GalleryImages: Door[] = [];
 
