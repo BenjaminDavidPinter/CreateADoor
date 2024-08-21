@@ -200,7 +200,7 @@ main {
 
 @media screen and (max-width: 650px) {
   .content {
-    flex-direction: column;
+    flex-direction: row;
     width: max-content;
   }
 
@@ -216,5 +216,20 @@ main {
     height: 1px;
     background: var(--red-to-pink-to-purple-horizontal-gradient);
     margin-block: 1.5rem;
+  }
+
+  .image-item {
+    width: 8em;
+    height: 10em;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .image-container {
+    width: 8em;   /* Width of each image tile */
+    height: 10em;  /* Height of each image tile */
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
   }
 }

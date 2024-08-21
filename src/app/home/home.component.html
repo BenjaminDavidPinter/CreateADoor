@@ -7,9 +7,8 @@
 </div>
 <div class="pill-group">
   @for (item of [
-    { title: 'Design Your Door', link: 'https://angular.dev', route: '/door-designer' },
-    { title: 'Gallery', link: '', route: '/gallery'},
-    { title: 'Contact Us Directly', link: 'https://angular.dev/tools/cli', route: '/contact-us' },
+    { title: 'The Door', link: '', route: '/base-door'},
+    { title: 'Panel Gallery', link: '', route: '/gallery'}
   ]; track item.title) {
     <a
       class="pill"
@@ -31,6 +30,7 @@
   }
 </div>
 </div>
-<div class="horizontal-divider" role="separator" aria-label="Divider"></div>
+
+
 <router-outlet />
 
